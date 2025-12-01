@@ -214,7 +214,7 @@ export default function CheckoutPage() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h3 className="text-2xl font-bold">Login Required</h3>
-          <Link href="/login" className="text-blue-600 underline">
+          <Link href="/auth/login" className="text-blue-600 underline">
             Go to Login
           </Link>
         </div>
