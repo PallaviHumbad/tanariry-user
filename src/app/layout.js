@@ -1,11 +1,11 @@
 // src/app/layout.js
-import './globals.css';
-import ClientLayout from './ClientLayout'; 
-import AppLayout from './AppLayout';
+import "./globals.css";
+import ClientLayout from "./ClientLayout";
+import AppLayout from "./AppLayout";
 
 export const metadata = {
-  title: 'Tana Riri - E-Commerce Store',
-  description: 'Your premium e-commerce destination',
+  title: "Tana Riri - E-Commerce Store",
+  description: "Your premium e-commerce destination",
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +17,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body style={{ fontFamily: "'Playfair Display', serif" }} className="bg-bg min-h-screen">
+      <body
+        style={{ fontFamily: "'Playfair Display', serif" }}
+        className="bg-bg min-h-screen"
+      >
         <ClientLayout>
           <AppLayout>{children}</AppLayout>
         </ClientLayout>
