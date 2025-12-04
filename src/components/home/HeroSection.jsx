@@ -14,10 +14,10 @@ export default function HeroSection() {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="https://tanariri1.netlify.app/crockery-hero.mp4" type="video/mp4" />
+                    <source src="/tanariri.mp4" type="video/mp4" />
                 </video>
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/20" />
             </div>
 
             {/* Content */}

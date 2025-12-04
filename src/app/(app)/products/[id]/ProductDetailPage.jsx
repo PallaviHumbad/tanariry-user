@@ -348,7 +348,7 @@ export default function ProductDetailPage({ product }) {
   }, [product?.category?._id, product?._id]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen ">
       <div className=" mx-auto px-8 py-8 lg:py-12">
 
         {/* Breadcrumb */}
@@ -362,40 +362,47 @@ export default function ProductDetailPage({ product }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 sm:px-6 lg:px-6">
 
-          <div className="lg:col-span-5 space-y-2">
-            <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 sticky top-6">
-              <div className="relative aspect-square">
-                {images.map((img, i) => (
-                  <Image
-                    key={i}
-                    src={img}
-                    alt={name}
-                    fill
-                    className={`object-contain transition-opacity duration-700 ${selectedImage === i ? 'opacity-100' : 'opacity-0'}`}
-                    priority={i === 0}
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    onError={(e) => e.currentTarget.src = "/fallback.jpg"}
-                  />
-                ))}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-md">
-                  {selectedImage + 1} / {images.length}
+          <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-24 space-y-4"> {/* top-24 = header ke baad perfect */}
+              <div className="relative  rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+                <div className="relative aspect-square">
+                  {images.map((img, i) => (
+                    <Image
+                      key={i}
+                      src={img}
+                      alt={name}
+                      fill
+                      className={`object-contain transition-opacity duration-700 ${selectedImage === i ? 'opacity-100' : 'opacity-0'}`}
+                      priority={i === 0}
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      onError={(e) => e.currentTarget.src = "/fallback.jpg"}
+                    />
+                  ))}
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-md z-10">
+                    {selectedImage + 1} / {images.length}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {images.length > 1 && (
-              <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-3 lg:hidden">
-                {images.map((img, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setSelectedImage(i)}
-                    className={`relative flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-4 transition-all ${selectedImage === i ? 'border-[#1E3A8A] ring-4 ring-[#1E3A8A]/20' : 'border-gray-300'}`}
-                  >
-                    <Image src={img} alt="" fill className="object-cover" />
-                  </button>
-                ))}
-              </div>
-            )}
+              {/* Mobile Thumbnails */}
+              {images.length > 1 && (
+                <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-4 lg:hidden">
+                  {images.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSelectedImage(i)}
+                      className={`relative flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-4 transition-all ${
+                        selectedImage === i
+                          ? 'border-[#1E3A8A] ring-4 ring-[#1E3A8A]/20'
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      <Image src={img} alt="" fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="lg:col-span-7 space-y-4">
@@ -449,7 +456,7 @@ export default function ProductDetailPage({ product }) {
               <div>• 100% Original Product</div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 border">
+            <div className="bg-[#f5f3f0] rounded-2xl p-6 border">
               <h3 className="font-bold text-lg mb-4">Why You'll Love It</h3>
               <div className="text-gray-700 text-sm leading-relaxed space-y-3">
                 <p>Handcrafted from premium quality ceramic and bone china, each piece is designed for daily use while maintaining an elegant touch.</p>
@@ -462,7 +469,7 @@ export default function ProductDetailPage({ product }) {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border">
+            <div className="bg-[#f5f3f0] rounded-2xl p-6 shadow-md border">
               <h3 className="font-bold text-lg mb-4">Product Details</h3>
               <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
                 <div><span className="font-medium">Material:</span> Fine Bone China</div>

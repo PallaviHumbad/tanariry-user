@@ -554,7 +554,7 @@ export default function ProductsContent() {
             <h2 className="text-4xl md:text-5xl font-playfair text-[#172554] font-normal pb-3">
              {activeCat ? activeCat.name : "All Products"}
             </h2>
-            <div className="absolute left-0 bottom-0 h-1 bg-pink-300 w-full rounded-full mb-8"></div>
+            <div className="absolute left-0 bottom-0 h-1 bg-pink-500 w-full rounded-full mb-8"></div>
              <p className="text-gray-600 mt-4">
               {loading ? "Loading..." : `${totalProducts} products found`}
             </p>
@@ -564,13 +564,13 @@ export default function ProductsContent() {
           {/* Search Bar */}
           <div className="w-full max-w-xl">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-pink-500" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
               <input
                 type="text"
                 placeholder="Search Tea Set, Dinner Plate..."
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
-                className="w-full pl-12 pr-8 py-2 border-2 border-pink-200 rounded-xl focus:border-pink-500 text-lg outline-none"
+                className="w-full pl-12 pr-8 py-2 border-2 border-gray-500 rounded-xl focus:border-gray-700 text-lg outline-none"
               />
               {searchQuery && (
                 <button onClick={() => setSearchQuery("")} className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -583,7 +583,7 @@ export default function ProductsContent() {
           {/* Desktop Filter Button */}
           <button
             onClick={() => setIsFilterOpen(true)}
-            className="hidden lg:flex items-center gap-3 px-6 py-2 bg-white border border-pink-300 rounded-lg font-medium text-[#172554] hover:bg-pink-50 transition"
+            className="hidden lg:flex items-center gap-3 px-6 py-2 border border-gray-500 rounded-lg font-medium text-[#172554] hover:bg-gray-50 transition"
           >
             <Filter className="w-5 h-5" />
             Filters

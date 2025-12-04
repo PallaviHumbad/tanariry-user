@@ -30,7 +30,11 @@ export default function ArtisanEdit() {
 
       {/* Right Side: Text & CTA */}
       <div className="md:w-1/3 w-full text-center md:text-left flex flex-col justify-center">
-        <h2 className="text-4xl md:text-5xl font-serif mb-6 tracking-tight">
+        <h2 className="text-3xl mb-6 tracking-tight"
+            style={{ fontFamily: "'Playfair Display', serif",
+              fontWeight: 400,
+              fontSize: '48px'
+              }} >
           The Artisan Edit
         </h2>
         <p className="text-gray-300 leading-relaxed mb-8 max-w-md mx-auto md:mx-0">

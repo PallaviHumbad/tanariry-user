@@ -96,7 +96,7 @@ export default function ProfileDropdown() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50">
+        <div className="absolute top-full right-0 mt-2 w-48 bg-[#f5f3f0] rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50">
           <Link
             href="/profile"
             onClick={() => setIsOpen(false)}

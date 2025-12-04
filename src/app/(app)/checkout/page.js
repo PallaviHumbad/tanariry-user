@@ -589,7 +589,7 @@ export default function CheckoutPage() {
 
   return (
     <>
-      <div className="bg-gray-50">
+      <div className="bg-[#f5f3f0]">
         <div className="mx-auto px-8 py-12">
 
           <div className="relative inline-block pb-3 mb-6">

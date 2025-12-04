@@ -172,7 +172,7 @@ export default function ProfilePage() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 py-4 px-4">
+      <div className="min-h-screen py-4 px-4">
         <div className="mx-auto">
            <div className="relative inline-block pb-4 mb-6">
             <h1 className="text-5xl text-[#172554]" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}>

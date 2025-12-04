@@ -214,7 +214,10 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <h1 className="mb-12 text-5xl leading-tight text-[#172554]" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h1 className="mb-12 text-3xl leading-tight text-[#172554]" style={{ fontFamily: "'Playfair Display', serif",
+              fontWeight: 400,
+              fontSize: '48px'
+             }}>
               Questions, requests, or just a hello — feel free to reach out.
             </h1>
 
@@ -260,7 +263,7 @@ export default function ContactPage() {
       <div className="w-full mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Departments */}
-          <div className="bg-white p-6 lg:p-8 rounded-lg shadow-sm border border-gray-200">
+          <div className="bg-[#f5f3f0] p-6 lg:p-8 rounded-lg shadow-sm border border-gray-200">
             <h2 className="mb-10 text-4xl text-[#1E3A8A]" style={{ fontFamily: "'Playfair Display', serif" }}>
               Departments
             </h2>
@@ -284,8 +287,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Contact Form - NOW FULLY WORKING */}
-          <div className="bg-white p-4 lg:p-6 rounded-lg shadow-sm border border-gray-200">
+          {/* Contact Form */}
+          <div className="bg-[#f5f3f0] p-4 lg:p-6 rounded-lg shadow-sm border border-gray-200">
             <h2 className="mb-6 text-3xl text-[#1E3A8A]" style={{ fontFamily: "'Playfair Display', serif" }}>
               Let's hear from you
             </h2>

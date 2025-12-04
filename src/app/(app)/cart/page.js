@@ -38,7 +38,7 @@ const CartItem = ({ item, updateQuantity, removeFromCart, getPrice }) => {
   }, [rawImage]);
 
   return (
-    <div className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-5 border border-gray-100">
+    <div className="group bg-[#f5f3f0] rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-5 border border-gray-100">
       <div className="flex gap-5">
         {/* Image */}
         <div className="w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200 relative">

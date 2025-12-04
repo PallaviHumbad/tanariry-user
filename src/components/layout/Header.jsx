@@ -31,7 +31,7 @@ export default function Header() {
 
   if (authLoading) {
     return (
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm h-16">
+      <header className="sticky top-0 z-40 border-b border-gray-200 shadow-sm h-16">
         <div className="flex items-center justify-between px-4 lg:px-8 h-full">
           <div className="animate-pulse bg-gray-300 h-10 w-32 rounded" />
           <div className="flex items-center gap-6">
@@ -48,7 +48,7 @@ export default function Header() {
      ${pathname === path ? 'text-[#1E3A8A]' : 'text-gray-900 hover:text-[#1E3A8A]'}`;
 
   const underlineStyle = (path) => `
-    after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pink-400 after:transition-all after:duration-300 after:origin-center
+    after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pink-500 after:transition-all after:duration-300 after:origin-center
     ${pathname === path
       ? 'after:w-full'
       : 'hover:after:w-full hover:after:left-0 hover:after:translate-x-0'
@@ -66,7 +66,7 @@ export default function Header() {
   const showWishlistBadge = mounted && wishlistCount > 0; 
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-40 bg-[#e9e4db] border-b border-gray-200 shadow-sm">
       <div className="w-full px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
 

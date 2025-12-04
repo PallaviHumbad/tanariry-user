@@ -58,10 +58,14 @@ export default function AboutPage() {
             <div className="space-y-12 lg:pt-20 order-2 lg:order-1">
               <div>
                  <div className="relative mb-8 inline-block">
-                  <h1 className="text-6xl lg:text-7xl font-normal pb-4 text-[#172554]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  <h1 className="text-3xl font-normal pb-4 text-[#172554]"
+                   style={{ 
+                    fontFamily: "'Playfair Display', serif",
+                    fontWeight: 400,
+                    fontSize: '48px',}}>
                     Our Story
                   </h1>
-                   <div className="absolute left-0 bottom-0 h-1 bg-pink-300 rounded-full w-full"></div>
+                   <div className="absolute left-0 bottom-0 h-1 bg-pink-500 rounded-full w-full"></div>
                 </div>
                 <div className="space-y-8 text-gray-700 leading-relaxed">
                   <p>
@@ -102,7 +106,10 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h1 className="text-5xl lg:text-6xl font-normal mb-6 text-[#172554]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                <h1 className="text-3xl font-normal mb-6 text-[#172554]" style={{ fontFamily: "'Playfair Display', serif",
+                  fontWeight: 400,
+                  fontSize: '48px',
+                 }}>
                   Made in India, Designed for the World
                 </h1>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -122,8 +129,13 @@ export default function AboutPage() {
       {/* 2. Design Philosophy */}
       <section className="py-8 px-4 lg:px-12 bg-white">
         
-        <h2 className="text-5xl font-bold text-center mb-16 text-[#172554]" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Our Philosophy
+        <h2 className="text-3xl  text-center mb-16 text-[#172554]" 
+        style={{ fontFamily: "'Playfair Display', serif",
+         fontWeight: 400,
+        fontSize: '48px',
+        }}>
+         
+         Design Philosophy
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
           
@@ -176,7 +188,10 @@ export default function AboutPage() {
           
           <div className="lg:w-1/3 lg:sticky lg:top-24">
            <div className="relative mb-6 inline-block">
-              <h2 className="text-5xl pb-4  text-[#172554]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <h2 className="text-3xl pb-4  text-[#172554]" style={{ fontFamily: "'Playfair Display', serif",
+                fontWeight: 400,
+                fontSize: '48px',
+              }}>
                 Our Leadership
               </h2>
               <div className="absolute left-0 bottom-0 h-1 bg-pink-500 rounded-full w-full"></div>
@@ -239,8 +254,10 @@ export default function AboutPage() {
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 md:p-8 flex flex-col justify-end">
-                <h3 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight"
-                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}>
+                <h3 className="text-3xl text-white mb-4 leading-tight"
+                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400,
+                      fontSize: '48px'
+                     }}>
                   Sustainability
                 </h3>
                 
@@ -248,9 +265,9 @@ export default function AboutPage() {
                   <p>
                     Tanariri Overseas LLP is moving toward sustainable sourcing, eco-packaging, and ethical production, ensuring our business not only thrives — but nurtures the communities and environment around it.
                   </p>
-                  <p className="font-medium text-pink-200">
+                  {/* <p className="font-medium text-pink-200">
                     Our goal: 100% carbon-neutral shipping for EU orders by 2026.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -264,18 +281,20 @@ export default function AboutPage() {
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 md:p-8 flex flex-col justify-end">
-                <h3 className="text-4xl md:text-5xl lg:text-6xl text-white mb-4 leading-tight"
-                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}>
+                <h3 className="text-2xl md:text-3xl lg:text-3xl text-white mb-4 leading-tight"
+                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400,
+                      fontSize: '48px'
+                    }}>
                   Craftsmanship
                 </h3>
                 
                 <div className="space-y-3 text-white text-sm md:text-base lg:text-lg leading-relaxed">
                   <p>
-                    Every product is handcrafted using traditional techniques — from gold-plating to hand-block printing.
+                    Every piece is lovingly handcrafted by master artisans using centuries-old techniques — from 24K gold plating to delicate hand-painting and hand-block printing — making each creation truly unique.
                   </p>
-                  <p className="font-medium text-pink-200">
+                  {/* <p className="font-medium text-pink-200">
                     We partner with MSME clusters and SEDEX-compliant units for quality and ethics.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
