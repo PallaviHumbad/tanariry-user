@@ -142,7 +142,7 @@ export default function FilterSidebar({
                 }`}
               >
                 <LayoutGrid className="w-7 h-7" />
-                <span className="font-medium">2 Columns</span>
+                <span className="font-medium">3 Columns</span>
               </button>
               <button
                 onClick={() => setViewMode("grid3")}

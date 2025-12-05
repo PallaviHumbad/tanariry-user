@@ -73,7 +73,7 @@ export default function FeaturedProducts() {
           {/* View All Button - Always Visible */}
           <Link
             href="/products"
-            className="px-3 py-1.5 border border-pink-500 text-[#1E3A8A] rounded-md hover:bg-white transition-all duration-300 text-sm md:text-[15px] font-medium whitespace-nowrap self-start sm:self-center"
+            className="px-3 py-1.5 border border-pink-500 text-[#1E3A8A] rounded-md hover:bg-[#f5f3f0] transition-all duration-300 text-sm md:text-[15px] font-medium whitespace-nowrap self-start sm:self-center"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             View All

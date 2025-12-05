@@ -280,6 +280,7 @@ import { useWishlist } from '@/context/WishlistContext';
 import { ShoppingCart, Share2, ChevronLeft, ChevronRight, Star, Shield } from 'lucide-react';
 import toast from 'react-hot-toast';
 import StayInspired from '@/components/home/StayInspired';
+import { useRef } from 'react';
 
 import ProductCard from '@/components/products/ProductCard';
 
@@ -292,6 +293,7 @@ export default function ProductDetailPage({ product }) {
   const [loadingRelated, setLoadingRelated] = useState(true);
 
   const { addToCart } = useCart();
+  const intervalRef = useRef(null);
 
   const getSafeImageUrl = (path) => {
     if (!path || typeof path !== 'string') return "/fallback.jpg";
@@ -317,6 +319,34 @@ export default function ProductDetailPage({ product }) {
     toast.success(`${quantity} × ${name} added to cart!`, {
       style: { background: '#1E3A8A', color: '#fff' }
     });
+  };
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const startInterval = () => {
+      intervalRef.current = setInterval(() => {
+        setSelectedImage(prev => (prev + 1) % images.length);
+      }, 4000);
+    };
+
+    startInterval();
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [images.length]);
+
+  const handleMouseEnter = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+  };
+
+  const handleMouseLeave = () => {
+    if (images.length > 1) {
+      intervalRef.current = setInterval(() => {
+        setSelectedImage(prev => (prev + 1) % images.length);
+      }, 4000);
+    }
   };
 
 
@@ -349,7 +379,7 @@ export default function ProductDetailPage({ product }) {
 
   return (
     <div className="min-h-screen ">
-      <div className=" mx-auto px-8 py-8 lg:py-12">
+      <div className=" mx-auto px-8 py-2 lg:py-4">
 
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6">
@@ -362,46 +392,63 @@ export default function ProductDetailPage({ product }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 sm:px-6 lg:px-6">
 
-          <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-24 space-y-4"> {/* top-24 = header ke baad perfect */}
-              <div className="relative  rounded-3xl overflow-hidden shadow-xl border border-gray-100">
-                <div className="relative aspect-square">
+         <div className="lg:col-span-5">
+            <div className="lg:sticky lg:top-24 space-y-4">
+              <div 
+                className="relative bg-[#f5f3f0] rounded-xl overflow-hidden shadow-xl border border-gray-100"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="relative  aspect-square">
                   {images.map((img, i) => (
                     <Image
                       key={i}
                       src={img}
-                      alt={name}
+                      alt={`${name} - Image ${i + 1}`}
                       fill
-                      className={`object-contain transition-opacity duration-700 ${selectedImage === i ? 'opacity-100' : 'opacity-0'}`}
+                      className={`object-contain transition-opacity duration-1000 ease-in-out ${
+                        selectedImage === i ? 'opacity-100' : 'opacity-0'
+                      }`}
                       priority={i === 0}
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       onError={(e) => e.currentTarget.src = "/fallback.jpg"}
                     />
                   ))}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-md z-10">
-                    {selectedImage + 1} / {images.length}
-                  </div>
-                </div>
-              </div>
 
-              {/* Mobile Thumbnails */}
-              {images.length > 1 && (
-                <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-4 lg:hidden">
-                  {images.map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setSelectedImage(i)}
-                      className={`relative flex-shrink-0 w-20 h-20 rounded-2xl overflow-hidden border-4 transition-all ${
-                        selectedImage === i
-                          ? 'border-[#1E3A8A] ring-4 ring-[#1E3A8A]/20'
-                          : 'border-gray-300 hover:border-gray-400'
-                      }`}
-                    >
-                      <Image src={img} alt="" fill className="object-cover" />
-                    </button>
-                  ))}
+                  {/* Image Counter */}
+                  {images.length > 1 && (
+                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold shadow-md z-10">
+                      {selectedImage + 1} / {images.length}
+                    </div>
+                  )}
                 </div>
-              )}
+
+                {/* Thumbnails at Bottom */}
+                {images.length > 1 && (
+                  <div className="p-4 bg-[#f5f3f0] border-t border-gray-100">
+                    <div className="flex gap-3 justify-center overflow-x-auto scrollbar-hide">
+                      {images.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setSelectedImage(i)}
+                          className={`relative flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-1 transition-all ${
+                            selectedImage === i
+                              ? 'border-[#1E3A8A] ring-1 ring-[#1E3A8A]/20 shadow-lg'
+                              : 'border-gray-300 hover:border-gray-400'
+                          }`}
+                        >
+                          <Image
+                            src={img}
+                            alt=""
+                            fill
+                            className="object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 

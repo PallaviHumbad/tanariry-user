@@ -42,8 +42,8 @@ export default function HeroSection() {
                         href="/products"
                         className={`
                             group inline-flex items-center gap-2.5 
-                            bg-[#172554] text-white 
-                            hover:bg-[#1E3A8A] 
+                            bg-[#f5f3f0] text-[#1E3A8A]
+                            hover:bg-[#f3f0ec] 
                             px-6 py-3 
                             rounded-md 
                             font-medium text-base 

@@ -127,7 +127,7 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Design Philosophy */}
-      <section className="py-8 px-4 lg:px-12 bg-white">
+      <section className="py-8 px-4 lg:px-12 bg-[#f5f3f0]">
         
         <h2 className="text-3xl  text-center mb-16 text-[#172554]" 
         style={{ fontFamily: "'Playfair Display', serif",
@@ -242,7 +242,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Sustainability & Craftsmanship */}
-      <section className="py-16 px-4 md:px-8 lg:px-12 bg-gray-50">
+      <section className="py-16 px-4 md:px-8 lg:px-12 bg-[#f5f3f0]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
 
             {/* Sustainability Card */}

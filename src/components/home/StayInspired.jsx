@@ -109,7 +109,7 @@ export default function StayInspired() {
           {/* Right side - Contact Us Button */}
           <div className="flex justify-start lg:justify-end">
             <Link href="/contact" className="inline-block">
-              <button className="group relative overflow-hidden px-9 py-3 bg-white text-[#1E3A8A] font-medium text-lg rounded-md transition-all duration-500 ease-out hover:shadow-2xl">
+              <button className="group relative overflow-hidden px-9 py-3 bg-[#f5f3f0] text-[#1E3A8A] font-medium text-lg rounded-md transition-all duration-500 ease-out hover:shadow-2xl">
 
                 {/* Main Text + Arrow */}
                 <span className="relative z-10 flex items-center gap-3 transition-all duration-500 ">
